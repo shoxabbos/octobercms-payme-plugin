@@ -1,5 +1,4 @@
 <?php
-
 use Shohabbos\BookShop\Models\Order;
 
 Event::listen('shohabbos.payme.existsAccount', function ($accounts, &$result, &$message) {

@@ -27,5 +27,14 @@ class Settings extends Model
 		$template = "<?php Route::any('{$path}', 'Shohabbos\Payme\Controllers\Payme@index');";
 
 	    $this->files->put(__DIR__ . '/'.'../routes.php', $template);
+
+
+        // write code
+        $code = self::get('code', null);
+        if ($code) {
+            $this->files->put(__DIR__ . '/'.'../init.php', $code);
+        }
 	}
+
+
 }

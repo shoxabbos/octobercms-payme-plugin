@@ -10,6 +10,7 @@ class Transactions extends Controller
     
     public $listConfig = 'config_list.yaml';
 
+
     public function __construct()
     {
         parent::__construct();
@@ -18,4 +19,5 @@ class Transactions extends Controller
     	SettingsManager::setContext('Shohabbos.Payme', 'transactions');
     }
     
+
 }

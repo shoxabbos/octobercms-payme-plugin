@@ -1,7 +1,9 @@
-<?php return [
+<?php 
+
+return [
     'plugin' => [
         'name' => 'Payme',
-        'description' => 'Payme payment system for October'
+        'description' => ' Интеграция с платежной системой Payme'
     ],
 
     'settings' => [
@@ -35,6 +37,4 @@
     	'title' => 'Транзакции',
     	'description' => 'Список транзакций'
     ],
-
-
 ];

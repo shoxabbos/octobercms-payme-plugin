@@ -6,7 +6,13 @@ use System\Classes\PluginBase;
 class Plugin extends PluginBase
 {
     public function registerComponents() {
-
+    	return [
+    		'name' => 'shohabbos.payme::lang.plugin.name',
+    		'description' => 'shohabbos.payme::lang.plugin.description',
+    		'author' => 'Shohabbos Olimjonov',
+            'icon' => 'oc-icon-paypal',
+            'homepage' => 'https://itmaker.uz',
+    	];
     }
 
 

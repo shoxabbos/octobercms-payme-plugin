@@ -77,12 +77,13 @@ class Payme extends Controller
             throw new \Exception( 'Can not cancel transaction', -31007);
         }
 
-        // fill balance or update status order
-        $cancelled = true;
-        Event::fire('shohabbos.payme.cancelTransaction', [$transaction, &$cancelled]);
+        // take away balance or update status order
+        $result = false;
+        $message = 'Can not cancel transaction';
+        Event::fire('shohabbos.payme.cancelTransaction', [$transaction, &$result, &$message]);
 
-        if (!$cancelled) {
-            throw new \Exception( 'Can not cancel transaction', -31007);
+        if (!$result) {
+            throw new \Exception($message, -31007);
         }
 
         $transaction->state = -2;
@@ -91,9 +92,9 @@ class Payme extends Controller
         $transaction->save();
 
         return [
-            'cancel_time' => $transaction->cancel_time,
-            'state' => $transaction->state,
-            'transaction' => $transaction->id
+            'cancel_time' => (int) $transaction->cancel_time,
+            'state' => (int) $transaction->state,
+            'transaction' => (string) $transaction->id
         ];
     }
 
@@ -139,7 +140,13 @@ class Payme extends Controller
         }
 
         // fill balance or update status order
-        Event::fire('shohabbos.payme.performTransaction', [$transaction]);
+        $result = false;
+        $message = 'Unknown error';
+        Event::fire('shohabbos.payme.performTransaction', [$transaction, &$result, &$message]);
+
+        if (!$result) {
+            throw new \Exception($message, -31008);
+        }
 
         $transaction->perform_time = time() * 1000;
         $transaction->state = 2;
@@ -235,7 +242,7 @@ class Payme extends Controller
 
 
         // Is exists order or account
-        $result = true;
+        $result = false;
         $message = 'Account or order not found';
         Event::fire('shohabbos.payme.existsAccount', [$accounts, &$result, &$message]);
 

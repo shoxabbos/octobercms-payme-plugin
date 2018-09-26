@@ -1,0 +1,34 @@
+columns:
+    id:
+        label: id
+        type: number
+    transaction:
+        label: transaction
+        type: text
+    code:
+        label: code
+        type: text
+    state:
+        label: state
+        type: text
+    owner_id:
+        label: owner_id
+        type: text
+    amount:
+        label: amount
+        type: text
+    reason:
+        label: reason
+        type: text
+    payme_time:
+        label: payme_time
+        type: text
+    cancel_time:
+        label: cancel_time
+        type: text
+    create_time:
+        label: create_time
+        type: text
+    perform_time:
+        label: perform_time
+        type: text

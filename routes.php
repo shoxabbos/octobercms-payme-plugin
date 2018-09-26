@@ -1,0 +1,1 @@
+<?php Route::any('/payme-webhook', 'Shohabbos\Payme\Controllers\Payme@index');

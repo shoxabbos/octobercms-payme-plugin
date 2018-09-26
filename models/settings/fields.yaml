@@ -1,0 +1,74 @@
+tabs:
+    fields:
+        min_amount:
+            default: 1000
+            required: 1
+            label: 'shohabbos.payme::lang.settings.min_amount'
+            comment: 'shohabbos.payme::lang.settings.min_amount_desc'
+            span: auto
+            tab: 'shohabbos.payme::lang.settings.form_keys_main'
+
+        max_amount:
+            default: 100000
+            required: 1
+            label: 'shohabbos.payme::lang.settings.max_amount'
+            comment: 'shohabbos.payme::lang.settings.max_amount_desc'
+            span: auto
+            tab: 'shohabbos.payme::lang.settings.form_keys_main'
+
+        type:
+            default: single
+            required: 1
+            label: 'shohabbos.payme::lang.settings.type'
+            tab: 'shohabbos.payme::lang.settings.form_keys_main'
+            span: auto
+            type: dropdown
+            options:
+                single: 'shohabbos.payme::lang.settings.type_single'
+                multi: 'shohabbos.payme::lang.settings.type_multi'
+
+        handler:
+            type: text
+            default: '/payme-webhook'
+            required: 1
+            label: 'shohabbos.payme::lang.settings.handler'
+            span: auto
+            tab: 'shohabbos.payme::lang.settings.form_keys_main'
+
+        accounts:
+            type: repeater
+            tab: 'shohabbos.payme::lang.settings.form_keys_main'
+            form:
+                fields:
+                    name:
+                        required: 1
+                        label: 'shohabbos.payme::lang.settings.field_name'
+                        comment: 'shohabbos.payme::lang.settings.field_name_desc'
+                        span: auto
+                    rule:
+                        label: 'shohabbos.payme::lang.settings.field_reg'
+                        comment: 'shohabbos.payme::lang.settings.field_reg_desc'
+                        span: auto
+
+        can_cancel:
+            tab: 'shohabbos.payme::lang.settings.form_keys_main'
+            label: 'shohabbos.payme::lang.settings.can_cancel'
+            type: switch
+            span: auto
+            comment: 'shohabbos.payme::lang.settings.can_cancel_desc'
+
+
+        merchant_id:
+            required: 1
+            label: ID
+            tab: 'shohabbos.payme::lang.settings.form_keys_tab'
+
+        key:
+            required: 1
+            label: KEY
+            tab: 'shohabbos.payme::lang.settings.form_keys_tab'
+
+        test_key:
+            required: 1
+            label: TEST KEY
+            tab: 'shohabbos.payme::lang.settings.form_keys_tab'

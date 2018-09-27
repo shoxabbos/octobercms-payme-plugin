@@ -5,7 +5,7 @@ use System\Classes\PluginBase;
 
 class Plugin extends PluginBase
 {
-    public function registerComponents() {
+    public function pluginDetails() {
     	return [
     		'name' => 'shohabbos.payme::lang.plugin.name',
     		'description' => 'shohabbos.payme::lang.plugin.description',

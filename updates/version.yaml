@@ -6,3 +6,5 @@
 1.0.3:
     - 'Updated table shohabbos_payme_transactions'
     - builder_table_update_shohabbos_payme_transactions.php
+1.0.4:
+    - 'Bug fix pluginDetails method of plugin'

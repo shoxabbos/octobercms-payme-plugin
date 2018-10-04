@@ -10,3 +10,5 @@
     - 'Bug fix pluginDetails method of plugin'
 1.0.5:
     - 'Bug fix in checkAmount event'
+1.0.6:
+    - 'Convert amount to UZS (amount /= 100) '

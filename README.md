@@ -10,6 +10,16 @@ Event::listen('shohabbos.payme.existsAccount', function ($accounts, &$result, &$
 	$result = Order::find($accounts['order_id']);
 });
 
+// $result param by default is true
+Event::listen('shohabbos.payme.checkAmount', function ($accounts, $amount, &$result, &$message) {
+    // check amount
+    $order = Order::find($accounts['order_id']);
+    
+    if ($order->amount != $amount) {
+	$result = false;	
+    }
+});
+
 Event::listen('shohabbos.payme.performTransaction', function ($transaction, &$result, &$message) {
     // check order as paid or fill user balance
 	$order = Order::find($transaction->owner_id);

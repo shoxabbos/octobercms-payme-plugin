@@ -262,6 +262,8 @@ class Payme extends Controller
 
 
         // validate amount
+        // TO DO: get currency params from backend
+        $amount /= 100;
         $result = $amount >= Settings::get('min_amount', 1) && $amount <= Settings::get('max_amount', 100);
         $message = 'Invalid amount';
         Event::fire('shohabbos.payme.checkAmount', [$accounts, $amount, &$result, &$message]);

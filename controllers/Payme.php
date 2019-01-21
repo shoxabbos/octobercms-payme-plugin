@@ -341,7 +341,7 @@ class Payme extends Controller
             $response['error'] = new \stdClass();
             $response['error']->code = $ex->getCode();
             $response['error']->message = $ex->getMessage();
-            $response['id'] = null;
+            $response['id'] = isset($request['id']) ? $request['id'] : null;
         }
 
         return response()->json($response);

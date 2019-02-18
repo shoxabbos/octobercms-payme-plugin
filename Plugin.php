@@ -15,6 +15,15 @@ class Plugin extends PluginBase
     	];
     }
 
+    public function registerReportWidgets()
+    {
+        return [
+            'Shohabbos\Payme\ReportWidgets\Payment' => [
+                'label' => 'Transactions of Payme',
+                'context' => 'dashboard'
+            ],
+        ];
+    }
 
     public function registerSettings() {
 	    return [

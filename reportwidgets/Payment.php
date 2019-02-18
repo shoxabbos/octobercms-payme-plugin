@@ -11,12 +11,12 @@ class Payment extends ReportWidgetBase
 
     public function render()
     {
-        //try {
+        try {
             $this->loadData();
-        // }
-        // catch (Exception $ex) {
-        //     $this->vars['error'] = $ex->getMessage();
-        // }
+        }
+        catch (Exception $ex) {
+            $this->vars['error'] = $ex->getMessage();
+        }
 
         return $this->makePartial('widget');
     }

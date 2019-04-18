@@ -15,15 +15,6 @@ class Plugin extends PluginBase
     	];
     }
 
-    public function registerReportWidgets()
-    {
-        return [
-            'Shohabbos\Payme\ReportWidgets\Payment' => [
-                'label' => 'Transactions of Payme',
-                'context' => 'dashboard'
-            ],
-        ];
-    }
 
     public function registerSettings() {
 	    return [
@@ -34,7 +25,7 @@ class Plugin extends PluginBase
                 'url'         => Backend::url('shohabbos/payme/transactions'),
                 'order'       => 500,
                 'category'    => 'shohabbos.payme::lang.plugin.name',
-                'permissions' => ['shohabbos.payme.manage_messages']
+                'permissions' => ['manage_payme_transactions'],
             ],
 	        'settings' => [
 	        	'category'    => 'shohabbos.payme::lang.plugin.name',
@@ -44,6 +35,7 @@ class Plugin extends PluginBase
 	            'class'       => 'Shohabbos\Payme\Models\Settings',
 	            'order'       => 501,
 	            'keywords'    => 'payme paymets',
+                'permissions' => ['manage_payme_settings'],
 	        ]
 	    ];
 	}
